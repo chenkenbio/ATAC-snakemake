@@ -3,10 +3,10 @@
 ## Usage  
 
 1. Editing the following files to specify paths to references or programs:  
-- `./src/alignment_qc_v0.smk`  
+- `src/alignment_qc_v0.smk`  
 - `src/fastq_screen.smk`  
 - `src/blasn_screen.smk`  
-- `picard_markdup.smk`  
+- `src/picard_markdup.smk`  
 - `src/filter_bam.smk`  
 - `src/bamcoverage_atac.smk`  
 
