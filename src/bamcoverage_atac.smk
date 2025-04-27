@@ -93,9 +93,9 @@ rule computematrix:
     output:
         outdir / "coverage_{aligner}_{norm}/{cell}.matrix.mat.gz"
     params:
-        gtf = "/home/kenchen/db/gencode/GRCh38/v46/gencode.v46.annotation.gtf",
+        gtf = lambda wildcards: GTF[SAMPLE_DATA[wildcards.sample]["genome"]],
         labels = lambda wildcards: ' '.join([x for x, data in SAMPLE_DATA.items() if data["cell"] == wildcards.cell]),
-        bl = "/home/kenchen/db/blacklist/hg38-blacklist.v2.bed"
+        bl = lambda wildcards: BLACKLIST[SAMPLE_DATA[wildcards.sample]["genome"]]
     log:
         temp(outdir / "coverage_{aligner}_{norm}/{cell}.matrix.log")
     threads:
