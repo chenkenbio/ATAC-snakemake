@@ -1,5 +1,10 @@
 # ATAC-seq snakemake pipeline
 
+## Overview
+
+![Pipeline](./pipeline.svg)
+
+
 ## Usage  
 
 1. Editing the following files to specify paths to references or programs:  
