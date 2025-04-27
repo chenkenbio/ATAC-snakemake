@@ -1,11 +1,11 @@
 TSS_b2k.by_gene:
-  saf: reference/gencode.vM25.TSS.slop-b2k.by_gene.for_featureCounts.saf
+  saf: reference/gencode.v46.TSS.slop-b2k.by_gene.saf
   strand: 0
   paired_end: true
   extra:
     - "-O --fraction"
 TSS_b2k.by_transcript:
-  saf: reference/gencode.vM25.TSS.slop-b2k.by_transcript.for_featureCounts.saf
+  saf: reference/gencode.v46.TSS.slop-b2k.by_transcript.saf
   strand: 0
   paired_end: true
   extra:
