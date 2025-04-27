@@ -1,0 +1,28 @@
+TSS_b2k.by_gene:
+  saf: reference/gencode.vM25.TSS.slop-b2k.by_gene.for_featureCounts.saf
+  strand: 0
+  paired_end: true
+  extra:
+    - "-O --fraction"
+TSS_b2k.by_transcript:
+  saf: reference/gencode.vM25.TSS.slop-b2k.by_transcript.for_featureCounts.saf
+  strand: 0
+  paired_end: true
+  extra:
+    - "-O --fraction"
+spikein_dm6:
+  gtf: reference/dm6.pseudo_anno.gtf
+  feature: chrom
+  metafeature: gene_id
+  strand: 0
+  paired_end: true
+  extra:
+    - "-M -O --fraction"
+repeat-locus:
+  gtf: reference/mm10_repeatmasker.v0.gtf.gz
+  feature: gene
+  metafeature: gene_id
+  strand: 0
+  paired_end: true
+  extra:
+    - "-M -O --fraction --minOverlap 30"
