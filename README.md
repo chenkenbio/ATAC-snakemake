@@ -10,8 +10,11 @@
 - `src/filter_bam.smk`  
 - `src/bamcoverage_atac.smk`  
 
+2. Editing the config file and sample file in `demo` to adjust the paths:  
+- `config.yaml`
+- `sample.tsv`
 
-2. Run the pipeline
+3. Run the pipeline
 ```bash
 snakemake -s pipeline_ATAC.smk -c [n_cores]
 ```
