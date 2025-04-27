@@ -22,3 +22,6 @@ snakemake -s pipeline_ATAC.smk -c [n_cores]
 
 
 
+## To do  
+- [ ] spike-in based normalization  
+- [ ] automatic differential accessibility analysis  
