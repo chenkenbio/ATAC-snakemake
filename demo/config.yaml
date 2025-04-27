@@ -1,0 +1,6 @@
+outdir: results
+bowtie2_index:
+  mm10: /home/kenchen/db/bowtie2/bowtie2.mouse.GRCm38-GENCODE_dm6/bowtie2.mouse.GRCm38-GENCODE_dm6
+featureCounts_config: "mm10_ATAC_featureCounts.yaml"
+
+samples: demo/sample.tsv

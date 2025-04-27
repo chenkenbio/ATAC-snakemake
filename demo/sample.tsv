@@ -1,0 +1,4 @@
+##path=/home/kenchen/Documents/ATAC-snakemake/demo
+##genome=mm10
+sample	rep	R1	R2
+mouse_ATAC	1	ATAC_demo_R1.fastq.gz	ATAC_demo_R2.fastq.gz
