@@ -9,7 +9,7 @@ import sys
 print_warning = partial(print, "WARNING: ", sep="", file=sys.stderr)
 
 def main():
-    parser = argparse.ArgumentParser(description='Wrapper for featureCounts tool.')
+    parser = argparse.ArgumentParser(description='Wrapper for featureCounts tool.', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     # Mandatory arguments
     parser.add_argument('-a', '--annotation', required=True, type=str, help="Name of the annotation file.")
