@@ -102,6 +102,7 @@ def main():
         assert args.attribute_type, "Attribute type must be provided for GTF annotation."
     elif args.annotation_format == "BED":
         tmp_bed = args.annotation + '.tmp.saf'
+        assert os.path.exists(args.bed2saf), "bed2saf.py script not found, please provide the correct path or add it to your PATH."
         if args.bed_key == "locus":
             os.system("{} {} > {}".format(args.bed2saf, args.annotation, tmp_bed))
         else:
