@@ -28,6 +28,7 @@ def main():
     parser.add_argument('-A', '--alias_file', type=str, help="Provide a chromosome name alias file.")
     parser.add_argument("--names", nargs='+', help="Provide a list of sample names for the input files.")
     parser.add_argument("--bed-key", choices=("locus", "name"), default="locus", )
+    parser.add_argument("--bed2saf", help="path to bed2saf.py script", default=os.path.join(os.path.dirname(__file__), "bed2saf.py"))
     parser.add_argument("--gene-table", type=str, default=None, help="Gene table file for gene name conversion.")
 
     # Level of summarization
@@ -102,9 +103,9 @@ def main():
     elif args.annotation_format == "BED":
         tmp_bed = args.annotation + '.tmp.saf'
         if args.bed_key == "locus":
-            os.system("bed2saf.py {} > {}".format(args.annotation, tmp_bed))
+            os.system("{} {} > {}".format(args.bed2saf, args.annotation, tmp_bed))
         else:
-            os.system("bed2saf.py -n {} > {}".format(args.annotation, tmp_bed))
+            os.system("{} -n {} > {}".format(args.bed2saf, args.annotation, tmp_bed))
         args.annotation = tmp_bed
         args.annotation_format = "SAF"
 
