@@ -10,7 +10,29 @@ import sys
 import math
 import warnings
 import numpy as np
-from biock2 import auto_open
+
+def auto_open(input, mode='rt'):
+    try:
+        if isinstance(input, str):
+            if input == '-':
+                return sys.stdin
+            elif input.endswith(".gz") or input.endswith(".bgz"):
+                import gzip
+                return gzip.open(input, mode=mode)
+            elif input.endswith(".bz2"):
+                try:
+                    import bz2
+                except ImportError:
+                    raise ImportError("bz2 module not found, please install it first")
+                return bz2.open(input, mode=mode)
+            else:
+                return open(input, mode=mode)
+        elif isinstance(input, TextIOWrapper):
+            return input
+        else:
+            raise IOError("Unknown input type {}".format(type(input)))
+    except:
+        raise IOError("Cannot open file {}".format(input))
 
 def get_args():
     p = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
