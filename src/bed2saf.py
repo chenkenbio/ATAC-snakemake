@@ -10,6 +10,7 @@ import sys
 import math
 import warnings
 import numpy as np
+from io import TextIOWrapper
 
 def auto_open(input, mode='rt'):
     try:
